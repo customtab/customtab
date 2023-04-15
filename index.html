@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="websites.css">
+    <link rel="shortcut icon" href="assets/chrome.svg">
+</head>
+<body>
+    <h1>Welcome</h1>
+
+    <div class="main">
+        <div class="searcharea">
+            <img src="assets/google.png">
+            <input type="text" name="search" id="search" placeholder="Search Google" autocomplete="off">
+            <button onclick="search()" id="searchBtn"><img src="assets/search.svg"></button>
+        </div>
+    </div>
+
+    <div class="row-container">
+        <div class="row">
+            <div class="youtube" onclick="window.location.href = 'https://youtube.com'"">
+                <img src="assets/youtube.svg">
+                <h3>Youtube</h3>
+                <p>https://youtube.com</p>
+            </div>
+            <div class="github" onclick="window.location.href = 'https://github.com'"">
+                <img src="assets/github.svg">
+                <h3>Github</h3>
+                <p>https://github.com</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="gmail" onclick="window.location.href = 'https://mail.google.com/'"">
+                <img src="assets/gmail.svg">
+                <h3>Gmail</h3>
+                <p>https://gmail.com</p>
+            </div>
+            <div class="instagram" onclick="window.location.href = 'https://instagram.com'"">
+                <img src="assets/instagram.svg">
+                <h3>Instagram</h3>
+                <p>https://instagram.com</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
