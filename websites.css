@@ -50,14 +50,27 @@
 .row div p {
     margin-left: 20px;
     margin-top: -10px;
-    vertical-align: middle;
     font-size: 16px;
     color: rgb(202, 202, 202);
 }
-@media (min-width: 768px) {
+.row > div {
+    flex-basis: 23%;
+    margin: 0 5px;
+}
+@media (max-width: 768px) {
     .row > div {
-        flex-basis: 23%;
-        margin: 0 5px;
+        margin-top: 20px;
+    }
+    .row {
+        display: block;
+        justify-content: space-between;
+        width: 300px;
+        margin-top: 20px;
+        height: 85px;
+        margin-bottom: 0;
+    }
+    #row2 {
+        margin-top: 130px;
     }
 }
   
