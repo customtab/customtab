@@ -13,3 +13,17 @@ inputId.addEventListener('keyup', function onEvent(e) {
         search()
     }
 });
+document.getElementById("wel").addEventListener("input", function() {
+    p = document.getElementById("wel")
+    localStorage.setItem('name', p.innerHTML)
+}, false);
+
+window.onload = function() {
+    let username = localStorage.getItem('name')
+    let p = document.getElementById("wel")
+    if (username == null) {
+        p.innerHTML = "User"
+    } else {
+        p.innerHTML = username
+    }
+}

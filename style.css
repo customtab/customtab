@@ -18,6 +18,10 @@ h1 {
 .main {
     display: inline;
 }
+#wel {
+    text-shadow: -2px 0px 29px rgba(0,224,255,1);
+    outline: none;
+}
 .searcharea {
     text-align: center;
     background-color: rgb(255 255 255 / 10%);
