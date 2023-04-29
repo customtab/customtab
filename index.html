@@ -20,33 +20,50 @@
         </div>
     </div>
 
-    <div class="row-container">
-        <div class="row">
-            <div class="youtube" onclick="window.location.href = 'https://youtube.com'"">
-                <img src="assets/youtube.svg">
-                <h3>Youtube</h3>
-                <p>https://youtube.com</p>
-            </div>
-            <div class="github" onclick="window.location.href = 'https://github.com'"">
-                <img src="assets/github.svg">
-                <h3>Github</h3>
-                <p>https://github.com</p>
-            </div>
+        <div class="row-container" id="row-container">
+                <div class="youtube" onclick="window.open('https://youtube.com')">
+                    <img src="assets/youtube.svg">
+                    <h3>Youtube</h3>
+                    <p>https://youtube.com</p>
+                </div>
+                <div class="github" onclick="window.open('https://github.com')">
+                    <img src="assets/github.svg">
+                    <h3>Github</h3>
+                    <p>https://github.com</p>
+                </div>
+                <div class="gmail" onclick="window.open('https://mail.google.com/')">
+                    <img src="assets/gmail.svg">
+                    <h3>Gmail</h3>
+                    <p>https://gmail.com</p>
+                </div>
+                <div class="new" onclick="newshort()">
+                    <img src="assets/add.svg">
+                    <h3>Add Shortcut</h3>
+                    <p>Create New Shortcuts</p>
+                </div>
         </div>
-        <div class="row" id="row2">
-            <div class="gmail" onclick="window.location.href = 'https://mail.google.com/'"">
-                <img src="assets/gmail.svg">
-                <h3>Gmail</h3>
-                <p>https://gmail.com</p>
-            </div>
-            <div class="instagram" onclick="window.location.href = 'https://instagram.com'"">
-                <img src="assets/instagram.svg">
-                <h3>Instagram</h3>
-                <p>https://instagram.com</p>
-            </div>
+        <div class="stopwatch">
+            <h2>STOPWATCH</h2>
+            <p><span id="time">0:0:0</span></p>
+            <button>START</button>
+            <button>RESET</button>
         </div>
-    </div>
     
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>ADD SHORTCUT</h2>
+        <form onsubmit="create(); return false;">
+            <h3>Shortcut Name</h3>
+            <input type="text" name="name" id="name" placeholder="Instagram" autocomplete="off" required>
+            <h3>Shortcut URL</h3>
+            <input type="text" name="url" id="url" placeholder="https://instagram.com/" autocomplete="off" required>
+            <h3>Shortcut Icon URL</h3>
+            <input type="text" name="imgurl" id="imgurl" placeholder="https://i.imgur.com/1234.png" autocomplete="off" required>
+            <button type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
-</html>

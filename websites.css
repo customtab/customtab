@@ -3,74 +3,161 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
-.row div h3 {
+.row-container div h3 {
     display: inline-block;
     margin-left: 5px;
     vertical-align: middle;
 }
-  
 .row-container {
-    width: 90%;
-    margin: 50px auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-    
-.row {
-    display: flex;
-    justify-content: space-between;
-    width: 600px;
+    flex-wrap: wrap;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 20px;
-    height: 85px;
-    margin-bottom: 0;
+    width: 635px;
 }
-.row  div {
-    flex-grow: 1;
-    text-align: center;
+.row-container div {
     border: 1px solid rgba(145, 145, 145, 0.096);
-    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(255 255 255 / 10%);
     border-radius: 4px;
     cursor: pointer;
+    width: 300px;
+    padding: 0px;
+    margin-top: 15px;
+    margin-left: 15px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    text-align: left;
 }
-.row div:hover {
+.row-container div button {
+    padding: 5px;
+    float: right;
+    font-size: 14px;
+    background-color: rgb(70, 70, 70);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    margin-top: -70px;
+    margin-right: 10px;    
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.row-container div button:hover {
+    background-color: rgb(53, 53, 53);  
+}
+.row-container div:hover {
     background-color: rgba(255, 255, 255, 0.082);
 }
-.row div img {
+.row-container div img {
     margin-left: 20px;
     display: inline;
     vertical-align: middle;
-    width: 30px;
+    width: 30px !important;
 }
-.row div p {
+.row-container div p {
     margin-left: 20px;
     margin-top: -10px;
     font-size: 16px;
     color: rgb(202, 202, 202);
 }
-.row > div {
-    flex-basis: 23%;
-    margin: 0 5px;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+    
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #888;
+    width: 80%;
+    font-size: 22px;
+    max-width: 500px;
+    position: relative;
+}
+.modal-content h2 {
+    text-align: center;
+}
+.modal-content h3 {
+    font-size: 20px;
+    color: rgb(51, 51, 51);
+    text-align: left;
+}
+.modal-content input {
+    padding: 6px;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(192, 192, 192);
+    width: 480px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    outline:none;
+    margin-top: -60px;
+}
+.modal-content button {
+    padding: 10px;
+    width: 100px;
+    margin-top: 15px;
+    color: white;
+    background-color: rgba(38, 38, 255, 0.877);
+    border: 1px solid gray;
+    font-weight: 800;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+}
+.modal-content input::after {
+    outline:none;
+}
+::placeholder {
+    color: rgb(126, 126, 126);
+}
+.close {
+    color: #aaaaaa;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
 }
 @media (max-width: 768px) {
-    .row > div {
-        margin-top: 20px;
+    .modal-content {
+        margin-top: 200px;
     }
-    .row {
+    .modal-content input {
+        width: 300px;
+    }
+    .row-container div {
+        margin-top: 20px;
         display: block;
-        justify-content: space-between;
+
+    }
+    .row-container {
+        margin-left: auto;
+        margin-right: auto;
         width: 300px;
         margin-top: 20px;
-        height: 85px;
-        margin-bottom: 0;
     }
-    #row2 {
-        margin-top: 130px;
+    .stopwatch {
+        display: none;
     }
 }
   
