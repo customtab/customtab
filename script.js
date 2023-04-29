@@ -79,66 +79,71 @@ function create() {
     let name = document.getElementById("name").value;
     let url = document.getElementById("url").value;
     let imgurl = document.getElementById("imgurl").value;
+    
+    // Remove specified characters from the URL
+    newurl = url.replace(/^(https?:\/\/)?(www\.)?/i, "").replace(/\/$/, "");
+    
     let newdiv = document.createElement("div");
-    newdiv.className = "shortcut"; // Add a class name to each new div
-
+    newdiv.className = "shortcut";
+  
     // Create and append child elements to the new div
     let divimg = document.createElement("img");
     divimg.src = imgurl;
     newdiv.appendChild(divimg);
-
+  
     let divname = document.createElement("h3");
     divname.innerHTML = name;
     newdiv.appendChild(divname);
-
+  
     let divp = document.createElement("p");
-    divp.innerHTML = url;
+    divp.innerHTML = newurl;
     newdiv.appendChild(divp);
-
+  
     let del = document.createElement("button")
     del.innerHTML = "Delete"
     newdiv.appendChild(del)
-
+  
     del.addEventListener("click", function(e) {
-        let choice = prompt('Do you want to delete the shortcut? Type "Yes" to confirm.')
-        if (choice == "Yes") {
-            e.preventDefault();
-            parent.removeChild(newdiv);
-            let index = shortcuts.findIndex(
-                (s) =>
-                s.name === name &&
-                s.url === url &&
-                s.imgurl === imgurl
-            );
-            if (index !== -1) {
-                shortcuts.splice(index, 1);
-                localStorage.setItem("shortcuts", JSON.stringify(shortcuts));
-            }
-            return
-        } else {
-            return
+      let choice = prompt('Do you want to delete the shortcut? Type "Yes" to confirm.')
+      if (choice == "Yes") {
+        e.preventDefault();
+        parent.removeChild(newdiv);
+        let index = shortcuts.findIndex(
+          (s) =>
+            s.name === name &&
+            s.url === url &&
+            s.imgurl === imgurl
+        );
+        if (index !== -1) {
+          shortcuts.splice(index, 1);
+          localStorage.setItem("shortcuts", JSON.stringify(shortcuts));
         }
+        return
+      } else {
+        return
+      }
     })
-
+  
     // Add a click event listener to take the user to the URL of the shortcut
     newdiv.addEventListener("click", function() {
-        window.open(url)
+      window.open(url)
     });
-
+  
     // Add the new div to the container and close the modal
     parent.insertBefore(newdiv, parent.lastChild.previousSibling);
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
-
+  
     // Save the new shortcut to local storage
     let shortcuts = JSON.parse(localStorage.getItem("shortcuts")) || [];
     shortcuts.push({
-        name,
-        url,
-        imgurl
+      name,
+      url,
+      imgurl
     });
     localStorage.setItem("shortcuts", JSON.stringify(shortcuts));
-}
+}  
+
 
 function loadShortcuts() {
     let username = localStorage.getItem('name')
@@ -164,7 +169,8 @@ function loadShortcuts() {
         newdiv.appendChild(divname);
 
         let divp = document.createElement("p");
-        divp.innerHTML = shortcut.url;
+        newurl = shortcut.url.replace(/^(https?:\/\/)?(www\.)?/i, "").replace(/\/$/, "");
+        divp.innerHTML = newurl;
         newdiv.appendChild(divp);
 
         let del = document.createElement("button")
@@ -190,7 +196,6 @@ function loadShortcuts() {
                     shortcuts.splice(index, 1);
                     localStorage.setItem("shortcuts", JSON.stringify(shortcuts));
                 }
-                return
             }
         });
 
