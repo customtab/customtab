@@ -10,60 +10,63 @@
     <link rel="shortcut icon" href="assets/chrome.svg">
 </head>
 <body>
-    <h1 id="welcome">Welcome <span id="wel" contenteditable="true" spellcheck="false">User</span></h1>
-
+    <div class="header">
+        <h1 id="welcome">Welcome <span id="wel" contenteditable="true" spellcheck="false">User</span></h1>
     <div class="main">
-        <div class="searcharea">
+          <div class="searcharea">
             <img src="assets/google.png">
-            <input type="text" name="search" id="search" placeholder="Search Google" autocomplete="off">
+            <input type="text" name="search" id="search" placeholder="Search The Web" autocomplete="off">
             <button onclick="search()" id="searchBtn"><img src="assets/search.svg"></button>
-        </div>
+          </div>
     </div>
-
-        <div class="row-container" id="row-container">
-                <div class="youtube" onclick="window.open('https://youtube.com')">
-                    <img src="assets/youtube.svg">
-                    <h3>Youtube</h3>
-                    <p>youtube.com</p>
-                </div>
-                <div class="github" onclick="window.open('https://github.com')">
-                    <img src="assets/github.svg">
-                    <h3>Github</h3>
-                    <p>github.com</p>
-                </div>
-                <div class="gmail" onclick="window.open('https://mail.google.com/')">
-                    <img src="assets/gmail.svg">
-                    <h3>Gmail</h3>
-                    <p>gmail.com</p>
-                </div>
-                <div class="new" onclick="newshort()">
-                    <img src="assets/add.svg">
-                    <h3>Add Shortcut</h3>
-                    <p>Create New Shortcuts</p>
-                </div>
-        </div>
-        <div class="stopwatch">
-            <h2>STOPWATCH</h2>
-            <p><span id="time">0:0:0</span></p>
-            <button>START</button>
-            <button>RESET</button>
-        </div>
-    
+  
+    <div class="row-container" id="row-container">
+      <div class="youtube" onclick="window.open('https://youtube.com')">
+        <img src="assets/youtube.svg">
+        <h3>Youtube</h3>
+        <p>youtube.com</p>
+      </div>
+      <div class="github" onclick="window.open('https://github.com')">
+        <img src="assets/github.svg">
+        <h3>Github</h3>
+        <p>github.com</p>
+      </div>
+      <div class="gmail" onclick="window.open('https://mail.google.com/')">
+        <img src="assets/gmail.svg">
+        <h3>Gmail</h3>
+        <p>gmail.com</p>
+      </div>
+      <div class="new" onclick="newshort()">
+        <img src="assets/add.svg">
+        <h3>Add Shortcut</h3>
+        <p>Create New Shortcuts</p>
+      </div>
+    </div>
+  
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2>ADD SHORTCUT</h2>
         <form onsubmit="create(); return false;">
-            <h3>Shortcut Name</h3>
-            <input type="text" name="name" id="name" placeholder="Instagram" autocomplete="off" required>
-            <h3>Shortcut URL</h3>
-            <input type="text" name="url" id="url" placeholder="https://instagram.com/" autocomplete="off" required>
-            <h3>Shortcut Icon URL</h3>
-            <input type="text" name="imgurl" id="imgurl" placeholder="https://i.imgur.com/1234.png" autocomplete="off" required>
-            <button type="submit">Create</button>
+          <h3>Shortcut Name</h3>
+          <input type="text" name="name" id="name" placeholder="Instagram" autocomplete="off" required>
+          <h3>Shortcut URL</h3>
+          <input type="text" name="url" id="url" placeholder="https://instagram.com/" autocomplete="off" required>
+          <h3>Shortcut Icon URL</h3>
+          <input type="text" name="imgurl" id="imgurl" placeholder="https://i.imgur.com/1234.png" autocomplete="off" required>
+          <button type="submit">Create</button>
         </form>
+      </div>
+    </div>
+
+    <div class="stopwatch">
+        <h2>STOPWATCH</h2>
+        <p><span id="time">0:0:0</span></p>
+        <button>START</button>
+        <button>RESET</button>
       </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+</html>

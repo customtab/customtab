@@ -204,3 +204,60 @@ function loadShortcuts() {
 }
 
 window.onload = loadShortcuts()
+// Get references to the HTML elements
+const stopwatch = document.querySelector('.stopwatch');
+const timeDisplay = stopwatch.querySelector('#time');
+const startButton = stopwatch.querySelector('button:first-of-type');
+const resetButton = stopwatch.querySelector('button:last-of-type');
+
+// Define variables for the stopwatch
+let startTime, elapsedTime = 0;
+let timerInterval;
+
+// Format the elapsed time in hours, minutes, and seconds
+function formatTime(elapsedTime) {
+  const hours = Math.floor(elapsedTime / 3600000);
+  const minutes = Math.floor((elapsedTime - hours * 3600000) / 60000);
+  const seconds = Math.floor((elapsedTime - hours * 3600000 - minutes * 60000) / 1000);
+  return `${hours}:${minutes}:${seconds}`;
+}
+
+// Update the time display with the formatted elapsed time
+function updateDisplay() {
+  timeDisplay.textContent = formatTime(elapsedTime);
+}
+
+// Start the stopwatch
+function start() {
+  startTime = Date.now() - elapsedTime;
+  timerInterval = setInterval(() => {
+    elapsedTime = Date.now() - startTime;
+    updateDisplay();
+  }, 1000);
+  startButton.textContent = 'STOP';
+}
+
+// Stop the stopwatch
+function stop() {
+  clearInterval(timerInterval);
+  startButton.textContent = 'START';
+}
+
+// Reset the stopwatch
+function reset() {
+  clearInterval(timerInterval);
+  elapsedTime = 0;
+  updateDisplay();
+  startButton.textContent = 'START';
+}
+
+// Add event listeners to the buttons
+startButton.addEventListener('click', () => {
+  if (startButton.textContent === 'START') {
+    start();
+  } else {
+    stop();
+  }
+});
+
+resetButton.addEventListener('click', reset);

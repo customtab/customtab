@@ -13,7 +13,6 @@ h1 {
     text-align: center;
     padding: 13px;
     margin-top: 100px;
-    margin-right: 50px;
 }
 .main {
     display: inline;
@@ -23,21 +22,24 @@ h1 {
     outline: none;
 }
 .stopwatch {
-    display: none;
+    display: block;
     border: none;
-    margin-top: 70px;
-    width: 450px;
-    height: 210px;
-    margin-right: 300px;
-    background-color: rgba(27, 24, 24, 0.233);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    box-shadow: -2px 0px 20px 0px rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(145, 145, 145, 0.055);
+    width: 300px;
+    height: 200px;
+    background-color: rgb(255 255 255 / 10%);
     border-radius: 12px;
     font-family: 'Roboto', sans-serif;
-    box-shadow: -2px 0px 20px 0px rgba(0, 202, 252, 0.267);
 }
 .stopwatch h2 {
     margin-left: 20px;
+    color: rgb(231, 231, 231);
     font-size: 33px;
-    padding-top: 5px;
+    padding-top: 3px;
     letter-spacing: 3px;
 }
 .stopwatch p {
@@ -60,16 +62,20 @@ h1 {
     background-color: #1b66fc;
 }
 
+.container {
+    display: flex;
+    margin-left: 500px;
+}
 .searcharea {
     text-align: center;
     background-color: rgb(255 255 255 / 10%);
-    width: 515px;
+    width: 512px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
 }
 #search {
-    width: 350px;
+    width: 375px;
     height: 50px;
     color: white;
     border-radius: 4px;
@@ -106,15 +112,21 @@ h1 {
     font-size: 17px;
     font-family: 'Rubik', sans-serif;
     font-weight: 100;
-    color: rgb(184, 184, 184);
+    color: rgb(189, 189, 189) !important;
 }
 #searchBtn {
+    margin-right: 10px;
     width: 60px;
-    margin-left: 20px;
     filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(7deg) brightness(109%) contrast(106%);
     background-color: transparent;
 }
 @media only screen and (max-width: 768px) {
+    .container {
+        display: block;
+        width: 370px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     h1 {
         text-align: center;
         margin-right: 0px;

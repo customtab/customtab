@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 .row-container div h3 {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 10px;
     vertical-align: middle;
 }
 .row-container {
@@ -14,18 +14,19 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 20px;
-    width: 635px;
+    width: 760px;
 }
 .row-container div {
-    border: 1px solid rgba(145, 145, 145, 0.096);
+    border: 1px solid rgba(145, 145, 145, 0.055);
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(255 255 255 / 10%);
-    border-radius: 6px;
     cursor: pointer;
-    width: 300px;
+    width: 350px;
     padding: 0px;
-    margin-top: 15px;
-    margin-left: 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: -2px 0px 20px 0px rgba(255, 255, 255, 0.055);
+    margin-left: 10px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
